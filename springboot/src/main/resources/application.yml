@@ -1,0 +1,27 @@
+#关于spring boot应用的配置内容都可以集中在该文件中，根据我们不同starter模块。可以定义容器端口号、数据库链接信息、日志级别等各种配置信息
+#配置web模块的服务端口号
+
+#多环境配置，支持application=${profile}.yml,通过spring.profiles.active=xxx指定
+#也可以通过命令方式实现，例如：java -jar xxx.jar --spring.profiles.active=xxx 实现启动不同的端口号
+spring:
+  profiles:
+    active: prd
+
+#spring boot推荐使用yaml文件，一个可读性高，用来表达资料序列的格式，YAML参考了其他语言（c语言、python，perl），并从xml、电子邮件的数据格式中获得灵感
+#例如：
+#spring:
+#  application:
+#     name:springboot
+# 可以通过spring.profiles属性来定义多个不同的环境配置，例如，默认应用的端口号：8881，test环境：8882，prod环境：8883，配置如下：
+#server:
+#  port=8881
+#测试环境
+#spring:
+#   profiles:test
+#   server:
+#      port:8882
+#生产环境
+#spring:
+#   profiles:prod
+#   server:
+#      port:8883
